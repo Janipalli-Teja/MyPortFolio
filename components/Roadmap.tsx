@@ -8,7 +8,7 @@ const Roadmap: React.FC = () => {
     <section id="roadmap" className="py-32 px-6 bg-zinc-950 relative">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-24 reveal-up opacity-0">
-          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Timeline</h2>
+          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase">Timeline</h2>
           <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">My Journey</h3>
           <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
             A chronological timeline of my professional development and educational background.

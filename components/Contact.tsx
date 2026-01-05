@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
 
       <div className="max-w-5xl mx-auto relative z-10 text-center">
         <div className="mb-24 reveal-up opacity-0">
-          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Contact</h2>
+          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase">Contact</h2>
           <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">Let's build the <span className="text-blue-500">future</span>.</h3>
           <p className="text-zinc-500 text-base md:text-lg mb-12 leading-relaxed max-w-2xl mx-auto">
             I'm currently <span className="text-zinc-100 font-bold underline decoration-blue-500/30 underline-offset-8">actively looking for new opportunities</span> and collaborations. Whether you're a recruiter or just want to discuss a potential project, feel free to reach out!

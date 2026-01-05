@@ -63,18 +63,13 @@ const Navbar: React.FC = () => {
       setIsScrolling(true);
       setActiveSection(id); // Immediate visual feedback
 
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
 
       // Keep it locked until the scroll animation is likely done
-      // and the observer is no longer being triggered by the movement
-      setTimeout(() => setIsScrolling(false), 850);
+      setTimeout(() => setIsScrolling(false), 1000);
     }
   };
 

@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24 reveal-up opacity-0">
-          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Works</h2>
+          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase">Works</h2>
           <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">Featured Projects</h3>
           <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
             A curated selection of technical solutions built for clients and personal research.
@@ -118,7 +118,7 @@ const Projects: React.FC = () => {
                     <h4 className="text-3xl md:text-5xl font-black text-zinc-100 mb-2 tracking-tight transition-colors group-hover/project:text-white">
                       {project.title}
                     </h4>
-                    <p className="text-blue-500 font-bold italic text-base md:text-lg mb-4">{project.subtitle}</p>
+                    <p className="text-blue-500 font-bold text-base md:text-lg mb-4">{project.subtitle}</p>
 
                     <div className="flex flex-wrap gap-3 mb-6">
                       {project.githubUrl && (
@@ -145,7 +145,7 @@ const Projects: React.FC = () => {
                         <div className="flex items-center gap-2 text-rose-400 font-black text-[10px] uppercase tracking-widest">
                           <Target size={12} /> Challenge
                         </div>
-                        <p className="text-[13px] text-zinc-400 italic">"{project.challenge}"</p>
+                        <p className="text-[13px] text-zinc-400">"{project.challenge}"</p>
                       </div>
                       <div className={`p-5 rounded-2xl border space-y-2 ${project.category === 'commercial' ? 'bg-emerald-500/5 border-emerald-500/10' : 'bg-blue-500/5 border-blue-500/10'}`}>
                         <div className={`flex items-center gap-2 font-black text-[10px] uppercase tracking-widest ${project.category === 'commercial' ? 'text-emerald-500' : 'text-blue-500'}`}>
@@ -155,16 +155,26 @@ const Projects: React.FC = () => {
                       </div>
                     </div>
 
-                    <div className="space-y-6">
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-zinc-500 font-black text-[10px] uppercase tracking-widest">
-                          <Zap size={12} /> Key Features
+                    <div className="space-y-8 pt-6 border-t border-white/5">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500">
+                            <Zap size={18} fill="currentColor" fillOpacity="0.2" />
+                          </div>
+                          <div>
+                            <h5 className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-100">
+                              Technical Implementation
+                            </h5>
+                            <div className="h-0.5 w-8 bg-blue-500/50 mt-1 rounded-full"></div>
+                          </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
                           {project.functionalities.map((func, i) => (
-                            <div key={i} className="flex items-center gap-2 text-[11px] text-zinc-500 font-bold uppercase tracking-tight">
-                              <div className="w-1.5 h-1.5 rounded-full bg-blue-500/30"></div>
-                              {func}
+                            <div key={i} className="flex items-start gap-3 group/feat">
+                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-blue-500/40 group-hover/feat:bg-blue-500 transition-colors"></div>
+                              <span className="text-[13px] text-zinc-400 font-medium leading-relaxed group-hover/feat:text-zinc-200 transition-colors">
+                                {func}
+                              </span>
                             </div>
                           ))}
                         </div>

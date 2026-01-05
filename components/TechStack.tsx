@@ -37,7 +37,7 @@ const TechStack: React.FC = () => {
         <div id="skills" className="py-32 bg-zinc-950/20 border-y border-zinc-900/30">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-24 reveal-up opacity-0">
-                    <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Expertise</h2>
+                    <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase">Expertise</h2>
                     <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">Technical Stack</h3>
                     <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
                         A comprehensive toolkit of modern technologies I use to build high-performance applications.
