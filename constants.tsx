@@ -5,7 +5,7 @@ export const PROFILE: UserProfile = {
   name: "Janipalli Teja",
   role: "Full Stack Developer",
   bio: "Full-stack developer specializing in the MERN stack and TypeScript. Currently pursuing B.Tech in IT at MVGR College of Engineering. I build scalable web applications with a focus on performance and user security.",
-  avatar: "assets/me-anime.jpeg",
+  avatar: "https://github.com/Janipalli-Teja.png",
   socials: {
     twitter: "https://x.com/Janipalli_teja",
     github: "https://github.com/Janipalli-Teja",
