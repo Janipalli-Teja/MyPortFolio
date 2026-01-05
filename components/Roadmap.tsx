@@ -7,10 +7,12 @@ const Roadmap: React.FC = () => {
   return (
     <section id="roadmap" className="py-32 px-6 bg-zinc-950 relative">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-24">
+        <div className="text-center mb-24 reveal-up opacity-0">
           <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Timeline</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-4">My Journey</h3>
-          <p className="text-zinc-500 text-base md:text-lg">A timeline of my professional and educational growth</p>
+          <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">My Journey</h3>
+          <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
+            A chronological timeline of my professional development and educational background.
+          </p>
         </div>
 
         <div className="relative border-l-2 border-zinc-800 ml-4 md:ml-0 pb-8 pl-8 md:pl-16">
@@ -27,10 +29,10 @@ const Roadmap: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/10 transition-colors"></div>
 
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
-                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-blue-400 bg-blue-400/10 px-3 py-1.5 rounded-full border border-blue-400/20 w-fit">
+                  <span className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1.5 rounded-full border border-blue-500/20 w-fit">
                     {item.period}
                   </span>
-                  <div className="hidden md:block p-2 bg-zinc-800/50 rounded-lg text-blue-400 border border-zinc-700/50">
+                  <div className="hidden md:block p-2 bg-zinc-800/50 rounded-lg text-blue-500 border border-zinc-700/50">
                     {item.type === 'job' ? <Briefcase size={16} /> : <GraduationCap size={16} />}
                   </div>
                 </div>

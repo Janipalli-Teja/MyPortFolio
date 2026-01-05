@@ -1,98 +1,66 @@
 
 import React, { useState } from 'react';
-import { Send, CheckCircle2, Phone } from 'lucide-react';
+import { Send, CheckCircle2, Phone, Copy, Check } from 'lucide-react';
 
 const Contact: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const email = "tejajanipalli29@gmail.com";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0a0a0c] text-white px-6 relative border-t border-zinc-900/50">
+    <section id="contact" className="py-32 bg-[#0a0a0c] text-white px-6 relative border-t border-zinc-900/50">
       {/* Deep Footer-ward Transition Glow */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-zinc-950 to-transparent pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center relative z-10">
-        <div>
+      <div className="max-w-5xl mx-auto relative z-10 text-center">
+        <div className="mb-24 reveal-up opacity-0">
           <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Contact</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6">Let's work together</h3>
-          <p className="text-zinc-400 text-base md:text-lg mb-10 leading-relaxed">
-            I'm currently looking for new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">Let's build the <span className="text-blue-500">future</span>.</h3>
+          <p className="text-zinc-500 text-base md:text-lg mb-12 leading-relaxed max-w-2xl mx-auto">
+            I'm currently <span className="text-zinc-100 font-bold underline decoration-blue-500/30 underline-offset-8">actively looking for new opportunities</span> and collaborations. Whether you're a recruiter or just want to discuss a potential project, feel free to reach out!
           </p>
-
-          <div className="space-y-8">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl flex items-center justify-center">
-                <Send size={20} className="text-blue-400" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-bold uppercase tracking-wider">Direct Email</p>
-                <p className="text-lg">tejajanipalli29@gmail.com</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl flex items-center justify-center">
-                <Phone size={20} className="text-blue-400" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-bold uppercase tracking-wider">Phone</p>
-                <p className="text-lg">+91-8143561977</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div className="bg-zinc-950/40 backdrop-blur-xl p-10 rounded-[2.5rem] border border-zinc-800/50 relative overflow-hidden shadow-2xl">
-          {submitted ? (
-            <div className="text-center py-20 animate-in fade-in zoom-in duration-500">
-              <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 size={40} className="text-green-500" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-              <p className="text-zinc-400">I'll get back to you as soon as possible.</p>
+        <div className="flex justify-center max-w-xl mx-auto">
+          <button
+            onClick={handleCopy}
+            className="group w-full p-10 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-[2.5rem] transition-all hover:border-blue-500/30 hover:bg-zinc-900/60 text-center relative overflow-hidden shadow-2xl active:scale-[0.98]"
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-600/10 transition-colors"></div>
+
+            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 mx-auto transition-all duration-300 ${copied ? 'bg-emerald-500/20 border-emerald-500/30 scale-110' : 'bg-blue-600/10 border-blue-500/20 group-hover:scale-110'}`}>
+              {copied ? (
+                <Check size={24} className="text-emerald-400" />
+              ) : (
+                <Copy size={24} className="text-blue-400" />
+              )}
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Full Name</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Your Name"
-                  className="w-full bg-zinc-900/30 border border-zinc-800/30 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 text-zinc-100 placeholder:text-zinc-600 transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Email Address</label>
-                <input
-                  type="email"
-                  required
-                  placeholder="email@example.com"
-                  className="w-full bg-zinc-900/30 border border-zinc-800/30 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 text-zinc-100 placeholder:text-zinc-600 transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Message</label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="What's on your mind?"
-                  className="w-full bg-zinc-900/30 border border-zinc-800/30 rounded-xl px-5 py-4 focus:outline-none focus:border-blue-500 text-zinc-100 placeholder:text-zinc-600 transition-all resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-xl shadow-blue-600/20 transition-all flex items-center justify-center gap-2 group active:scale-95"
-              >
-                Send Message
-                <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </form>
-          )}
+
+            <p className="text-[11px] text-zinc-500 font-black uppercase tracking-[0.3em] mb-2">
+              {copied ? 'Copied to Clipboard!' : 'Click to Copy Email'}
+            </p>
+            <p className={`text-xl md:text-3xl font-black transition-colors duration-300 ${copied ? 'text-emerald-400' : 'text-zinc-100 group-hover:text-blue-400'}`}>
+              {email}
+            </p>
+
+            {/* Subtle Tooltip/Hint */}
+            <div className="mt-6 flex justify-center gap-4 text-[9px] font-black uppercase tracking-widest text-zinc-600 group-hover:text-zinc-400 transition-colors">
+              <span className="flex items-center gap-1.5 line-through decoration-zinc-800">No More Forms</span>
+              <span className="w-1 h-1 rounded-full bg-zinc-800"></span>
+              <span className="flex items-center gap-1.5">One-Tap Copy</span>
+            </div>
+          </button>
+        </div>
+
+        {/* Hiring Badge */}
+        <div className="mt-20 inline-flex items-center gap-3 px-6 py-3 bg-zinc-900/50 border border-white/5 rounded-full backdrop-blur-md">
+          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+          <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Available for Full-time Roles</span>
         </div>
       </div>
     </section>

@@ -23,34 +23,32 @@ const Projects: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-zinc-800/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Works & </h2>
-            <h3 className="text-4xl md:text-5xl font-black text-zinc-100 leading-none">My Projects</h3>
-            <p className="text-zinc-500 mt-4 text-base md:text-lg">
-              A collection of technical solutions built for clients and personal research.
-            </p>
-          </div>
+        <div className="text-center mb-24 reveal-up opacity-0">
+          <h2 className="text-blue-500 font-bold tracking-tighter text-sm mb-2 uppercase italic">Works</h2>
+          <h3 className="text-4xl md:text-5xl font-black text-zinc-100 mb-6 tracking-tight">Featured Projects</h3>
+          <p className="text-zinc-500 text-base md:text-lg max-w-2xl mx-auto">
+            A curated selection of technical solutions built for clients and personal research.
+          </p>
+        </div>
 
-          <div className="flex p-1.5 bg-zinc-950 rounded-2xl w-fit border border-zinc-800/50 shadow-inner backdrop-blur-sm">
-            {[
-              { id: 'all', label: 'All', icon: null },
-              { id: 'commercial', label: 'Freelance', icon: <Briefcase size={14} /> },
-              { id: 'personal', label: 'Personal', icon: <User size={14} /> }
-            ].map(btn => (
-              <button
-                key={btn.id}
-                onClick={() => {
-                  setFilter(btn.id as any);
-                  setShowAll(false);
-                  setExpandedId(null);
-                }}
-                className={`px-6 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${filter === btn.id ? 'bg-zinc-800/50 text-blue-400 shadow-lg ring-1 ring-zinc-700/50' : 'text-zinc-500 hover:text-zinc-300'}`}
-              >
-                {btn.icon} {btn.label}
-              </button>
-            ))}
-          </div>
+        <div className="flex justify-center mb-24">
+          {[
+            { id: 'all', label: 'All', icon: null },
+            { id: 'commercial', label: 'Freelance', icon: <Briefcase size={14} /> },
+            { id: 'personal', label: 'Personal', icon: <User size={14} /> }
+          ].map(btn => (
+            <button
+              key={btn.id}
+              onClick={() => {
+                setFilter(btn.id as any);
+                setShowAll(false);
+                setExpandedId(null);
+              }}
+              className={`px-6 py-2 rounded-xl text-sm font-bold transition-all flex items-center gap-2 ${filter === btn.id ? 'bg-zinc-800/50 text-blue-400 shadow-lg ring-1 ring-zinc-700/50' : 'text-zinc-500 hover:text-zinc-300'}`}
+            >
+              {btn.icon} {btn.label}
+            </button>
+          ))}
         </div>
 
         <div className="space-y-32">
@@ -113,7 +111,7 @@ const Projects: React.FC = () => {
                 <div className="lg:col-span-7 flex flex-col justify-center">
                   <div className="mb-6">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className={`text-[11px] font-black uppercase tracking-[0.2em] ${project.category === 'commercial' ? 'text-emerald-400' : 'text-blue-400'}`}>
+                      <span className={`text-[11px] font-black uppercase tracking-[0.2em] ${project.category === 'commercial' ? 'text-emerald-500' : 'text-blue-500'}`}>
                         {project.role}
                       </span>
                     </div>
@@ -121,6 +119,20 @@ const Projects: React.FC = () => {
                       {project.title}
                     </h4>
                     <p className="text-blue-500 font-bold italic text-base md:text-lg mb-4">{project.subtitle}</p>
+
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      {project.githubUrl && (
+                        <a href={project.githubUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white px-4 py-2 rounded-2xl font-black transition-all text-[11px] border border-white/5 uppercase tracking-[0.2em] active:scale-95">
+                          <Github size={14} /> Source
+                        </a>
+                      )}
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-2xl font-black shadow-xl shadow-blue-600/20 transition-all text-[11px] uppercase tracking-[0.2em] active:scale-95">
+                          Live Demo <ArrowUpRight size={14} />
+                        </a>
+                      )}
+                    </div>
+
                     <p className="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl">
                       {project.description}
                     </p>
@@ -136,7 +148,7 @@ const Projects: React.FC = () => {
                         <p className="text-[13px] text-zinc-400 italic">"{project.challenge}"</p>
                       </div>
                       <div className={`p-5 rounded-2xl border space-y-2 ${project.category === 'commercial' ? 'bg-emerald-500/5 border-emerald-500/10' : 'bg-blue-500/5 border-blue-500/10'}`}>
-                        <div className={`flex items-center gap-2 font-black text-[10px] uppercase tracking-widest ${project.category === 'commercial' ? 'text-emerald-400' : 'text-blue-400'}`}>
+                        <div className={`flex items-center gap-2 font-black text-[10px] uppercase tracking-widest ${project.category === 'commercial' ? 'text-emerald-500' : 'text-blue-500'}`}>
                           <Award size={12} /> Outcome
                         </div>
                         <p className="text-[13px] text-zinc-200 font-medium leading-relaxed">{project.result}</p>
@@ -158,18 +170,7 @@ const Projects: React.FC = () => {
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-4 pt-4">
-                        {project.githubUrl && (
-                          <a href={project.githubUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3 rounded-xl font-bold transition-all text-xs border border-white/5">
-                            <Github size={16} /> Source Code
-                          </a>
-                        )}
-                        {project.liveUrl && (
-                          <a href={project.liveUrl} target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold shadow-xl shadow-blue-600/20 transition-all text-xs">
-                            Live Preview <ArrowUpRight size={16} />
-                          </a>
-                        )}
-                      </div>
+
                     </div>
                   </div>
 

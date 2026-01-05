@@ -35,4 +35,5 @@ export interface UserProfile {
     linkedin?: string;
     email?: string;
   };
+  resumeUrl?: string;
 }

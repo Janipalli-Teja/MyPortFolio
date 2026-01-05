@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { PROFILE } from '../constants';
-import { Github, Linkedin, Mail, X } from 'lucide-react';
+import { Github, Linkedin, Mail, X, FileText } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const avatarUrl = PROFILE.avatar;
@@ -72,22 +72,39 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="reveal-up opacity-0 [animation-delay:800ms] flex flex-wrap gap-4 items-center">
-            {[
-              { icon: <Github size={22} />, url: PROFILE.socials.github, hover: 'hover:text-white hover:border-white/20 hover:bg-white/5' },
-              { icon: <X size={22} />, url: PROFILE.socials.twitter, hover: 'hover:text-white hover:border-white/20 hover:bg-white/5' },
-              { icon: <Linkedin size={22} />, url: PROFILE.socials.linkedin, hover: 'hover:text-blue-500 hover:border-blue-500/20 hover:bg-blue-500/5' },
-              { icon: <Mail size={22} />, url: PROFILE.socials.email, hover: 'hover:text-emerald-400 hover:border-emerald-400/20 hover:bg-emerald-400/5' },
-            ].map((social, idx) => social.url && (
+            {/* Resume Download Button */}
+            {PROFILE.resumeUrl && (
               <a
-                key={idx}
-                href={social.url}
-                target="_blank"
-                rel="noopener"
-                className={`p-4 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-2xl shadow-xl transition-all hover:-translate-y-2 text-zinc-400 ${social.hover}`}
+                href={PROFILE.resumeUrl}
+                download="Janipalli_Teja_Resume.pdf"
+                className="group relative inline-flex items-center gap-4 px-8 py-4 bg-white text-zinc-950 font-black uppercase text-[11px] tracking-[0.2em] rounded-2xl transition-all hover:bg-blue-600 hover:text-white shadow-xl shadow-white/5 active:scale-95 overflow-hidden"
               >
-                {social.icon}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <span className="relative z-10 flex items-center gap-3">
+                  <FileText size={18} />
+                  Download CV
+                </span>
               </a>
-            ))}
+            )}
+
+            <div className="flex gap-4">
+              {[
+                { icon: <Github size={22} />, url: PROFILE.socials.github, hover: 'hover:text-white hover:border-white/20 hover:bg-white/5' },
+                { icon: <X size={22} />, url: PROFILE.socials.twitter, hover: 'hover:text-white hover:border-white/20 hover:bg-white/5' },
+                { icon: <Linkedin size={22} />, url: PROFILE.socials.linkedin, hover: 'hover:text-blue-500 hover:border-blue-500/20 hover:bg-blue-500/5' },
+                { icon: <Mail size={22} />, url: PROFILE.socials.email, hover: 'hover:text-emerald-400 hover:border-emerald-400/20 hover:bg-emerald-400/5' },
+              ].map((social, idx) => social.url && (
+                <a
+                  key={idx}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener"
+                  className={`p-4 bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-2xl shadow-xl transition-all hover:-translate-y-2 text-zinc-400 ${social.hover}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

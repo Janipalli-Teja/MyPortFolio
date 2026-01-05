@@ -1,10 +1,11 @@
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import Roadmap from './components/Roadmap';
-import Contact from './components/Contact';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import Projects from './components/Projects.tsx';
+import Roadmap from './components/Roadmap.tsx';
+import Contact from './components/Contact.tsx';
+import TechStack from './components/TechStack.tsx';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <TechStack />
         <Projects />
         <Roadmap />
         <Contact />

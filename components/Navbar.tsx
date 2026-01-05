@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { id: 'about', label: 'About' },
+    { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Works' },
     { id: 'roadmap', label: 'Journey' },
     { id: 'contact', label: 'Contact' },
@@ -96,9 +97,6 @@ const Navbar: React.FC = () => {
             <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center text-white font-black text-xs shadow-lg shadow-blue-500/20">
               JT
             </div>
-            <span className="hidden lg:inline-block text-lg font-black tracking-tighter text-zinc-100">
-              JANIPALLI
-            </span>
           </a>
 
           {/* Center: Desktop Nav & Mobile Label */}

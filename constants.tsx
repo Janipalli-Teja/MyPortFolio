@@ -11,7 +11,8 @@ export const PROFILE: UserProfile = {
     github: "https://github.com/Janipalli-Teja",
     linkedin: "https://www.linkedin.com/in/teja-janipalli/",
     email: "mailto:tejajanipalli29@gmail.com"
-  }
+  },
+  resumeUrl: "https://drive.google.com/file/d/1J5pSTsZAYlHyu4if3Zy0FzZ-xBqalT18/view?usp=sharing"
 };
 
 export const PROJECTS: Project[] = [
@@ -31,8 +32,9 @@ export const PROJECTS: Project[] = [
       "Digital Student Directory with Cloudinary",
       "Bulk Attendance & Fee tracking"
     ],
-    image: "https://images.unsplash.com/photo-1526232759583-d23eddfca1b8?auto=format&fit=crop&q=80&w=1200",
-    tags: ["React Native", "Expo", "Firebase", "Cloudinary", "TypeScript"]
+    image: "https://github.com/Janipalli-Teja/pongal/blob/main/WhatsApp%20Image%202026-01-05%20at%2012.49.29.jpeg?raw=true",
+    tags: ["React Native", "Expo", "Firebase", "Cloudinary", "TypeScript"],
+    githubUrl: "https://github.com/Janipalli-Teja/Coach-App-Demo"
   },
   {
     id: "p0",
@@ -49,8 +51,8 @@ export const PROJECTS: Project[] = [
       "Employee attendance & salary automation",
       "Supervisor dashboard for walk-ins"
     ],
-    image: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=1200",
-    liveUrl: "https://rvrestorts.in",
+    image: "https://github.com/Janipalli-Teja/pongal/blob/main/WhatsApp%20Image%202025-12-10%20at%2012.19.51_14d3f1e6.jpg?raw=true",
+    liveUrl: "https://rvresorts.in",
     tags: ["MERN Stack", "TypeScript", "JWT Auth", "Tailwind"]
   },
   {
@@ -68,8 +70,8 @@ export const PROJECTS: Project[] = [
       "Dynamic Cart & Payment integration",
       "Live delivery status updates"
     ],
-    image: "https://images.unsplash.com/photo-1526367790999-0150786486a9?auto=format&fit=crop&q=80&w=1200",
-    githubUrl: "https://github.com/Janipalli-Teja",
+    image: "https://github.com/Janipalli-Teja/Foody/blob/main/client/public/agent.jpg?raw=true",
+    githubUrl: "https://github.com/Janipalli-Teja/Foody",
     tags: ["MongoDB", "Express", "React", "Node.js"]
   },
   {
@@ -87,8 +89,8 @@ export const PROJECTS: Project[] = [
       "Automated PDF challan generation",
       "Admin dashboard for traffic monitoring"
     ],
-    image: "https://images.unsplash.com/photo-1506146632482-96351a2d8ee2?auto=format&fit=crop&q=80&w=1200",
-    githubUrl: "https://github.com/Janipalli-Teja",
+    image: "https://i.pinimg.com/736x/1a/22/a4/1a22a498e352cbb1b989ec722e33862a.jpg",
+    githubUrl: "https://github.com/Janipalli-Teja/ChallanEase",
     tags: ["Node.js", "Express", "MongoDB", "PWA"]
   }
 ];
