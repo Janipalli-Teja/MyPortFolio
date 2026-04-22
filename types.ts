@@ -34,6 +34,8 @@ export interface UserProfile {
     github?: string;
     linkedin?: string;
     email?: string;
+    phone?: string;
+    website?: string;
   };
   resumeUrl?: string;
 }

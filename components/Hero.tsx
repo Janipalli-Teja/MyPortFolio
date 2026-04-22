@@ -8,8 +8,8 @@ const Hero: React.FC = () => {
 
   const techStack = [
     {
-      name: 'React',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      name: 'Next.js',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
       pos: 'top-[-8%] left-[5%]',
       delay: '0s'
     },
@@ -135,7 +135,7 @@ const Hero: React.FC = () => {
                       className="w-14 h-14 md:w-20 md:h-20 bg-zinc-950/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/5 flex items-center justify-center p-2.5 hover:scale-110 transition-all duration-300 cursor-help group"
                       title={tech.name}
                       style={{
-                        boxShadow: `0 0 20px -10px ${tech.name === 'React' ? '#61dafb' :
+                        boxShadow: `0 0 20px -10px ${tech.name === 'Next.js' ? '#ffffff' :
                           tech.name === 'Node.js' ? '#68a063' :
                             tech.name === 'MongoDB' ? '#47a248' :
                               tech.name === 'TypeScript' ? '#3178c6' :
@@ -148,7 +148,7 @@ const Hero: React.FC = () => {
                       <img
                         src={tech.icon}
                         alt={tech.name}
-                        className={`w-full h-full object-contain filter group-hover:brightness-125 transition-all ${tech.name === 'Express' ? 'invert brightness-200' : ''}`}
+                        className={`w-full h-full object-contain filter group-hover:brightness-125 transition-all ${tech.name === 'Express' || tech.name === 'Next.js' ? 'invert brightness-200' : ''}`}
                       />
                     </div>
                   </div>
