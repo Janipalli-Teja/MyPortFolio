@@ -12,7 +12,7 @@ export const PROFILE: UserProfile = {
     linkedin: "https://www.linkedin.com/in/teja-janipalli/",
     email: "mailto:tejajanipalli29@gmail.com"
   },
-  resumeUrl: "https://drive.google.com/file/d/1J5pSTsZAYlHyu4if3Zy0FzZ-xBqalT18/view?usp=sharing"
+  resumeUrl: "https://drive.google.com/file/d/1B6Pl-uGtlMG0f8sgEic-kLV6PI-UE-_7/view?usp=drive_link"
 };
 
 export const PROJECTS: Project[] = [
